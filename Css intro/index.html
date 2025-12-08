@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="https://png.pngtree.com/png-vector/20220607/ourmid/pngtree-vector-css-icon-code-black-button-vector-png-image_13830248.png">
+
+    <title>Introduction to CSS – Detailed Notes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f3;
+            padding: 30px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 14px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #34495e;
+            margin-top: 25px;
+        }
+
+        .example-box {
+            background: #f0f9ff;
+            border-left: 5px solid #2980b9;
+            padding: 15px 18px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        code {
+            background: #f3f3f3;
+            padding: 3px 6px;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        .highlight {
+            background: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 12px 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .footer {
+            margin-top: 35px;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Introduction to CSS (Cascading Style Sheets)</h1>
+
+        <p>
+            CSS stands for <strong>Cascading Style Sheets</strong>. It is a stylesheet language used to describe how HTML
+            elements should appear on a webpage. HTML only defines the structure of the content, while CSS controls
+            how that content looks. Using CSS, you can change colors, layouts, fonts, spacing, backgrounds, borders,
+            animations, and much more.
+        </p>
+
+        <h2>Why Do We Use CSS?</h2>
+        <ul>
+            <li><strong>Improves appearance:</strong> Makes webpages look professional, clean, and attractive.</li>
+            <li><strong>Faster development:</strong> A single CSS file can style multiple pages.</li>
+            <li><strong>Separation of structure and design:</strong> HTML handles structure, CSS handles style.</li>
+            <li><strong>Responsive design:</strong> Helps create mobile, tablet, and desktop layouts.</li>
+            <li><strong>Reusability:</strong> CSS rules can be reused across multiple elements or pages.</li>
+        </ul>
+
+        <h2>How CSS Works (The “Cascading” Concept)</h2>
+        <p>
+            The term <strong>cascading</strong> means that multiple CSS rules can apply to the same element. The browser
+            decides which rule takes effect based on three factors:
+        </p>
+        <ul>
+            <li><strong>Specificity:</strong> Inline > ID > Class > Element</li>
+            <li><strong>Order:</strong> Later rules override earlier ones</li>
+            <li><strong>Importance:</strong> <code>!important</code> overrides everything</li>
+        </ul>
+
+        <div class="highlight">
+            Example:  
+            If both <code>p { color: blue; }</code> and <code>#para { color: red; }</code> target the same paragraph,  
+            the ID selector wins, so the text becomes red.
+        </div>
+
+        <h2>Ways to Add CSS in HTML</h2>
+
+        <h3>1. Inline CSS</h3>
+        <p>Used inside the HTML tag using the <code>style</code> attribute. Best for quick testing, not recommended for final designs.</p>
+        <div class="example-box">
+<pre>
+&lt;p style="color: blue; font-size: 20px;"&gt;This is inline CSS&lt;/p&gt;
+</pre>
+        </div>
+
+        <h3>2. Internal CSS</h3>
+        <p>Placed inside the <code>&lt;style&gt;</code> tag in the HTML <code>&lt;head&gt;</code> section. Good for single-page styling.</p>
+        <div class="example-box">
+<pre>
+&lt;style&gt;
+    h2 {
+        color: green;
+        text-align: center;
+    }
+&lt;/style&gt;
+</pre>
+        </div>
+
+        <h3>3. External CSS</h3>
+        <p>Stored in a separate file (e.g., <code>style.css</code>) and linked using <code>&lt;link&gt;</code>. Best for multi-page websites.</p>
+        <div class="example-box">
+<pre>
+&lt;link rel="stylesheet" href="styles.css"&gt;
+</pre>
+        </div>
+
+        <h2>Basic CSS Selectors</h2>
+
+        <h3>1. Element Selector</h3>
+        <p>Targets all elements of a specific type.</p>
+        <code>p { color: red; }</code>
+
+        <h3>2. Class Selector</h3>
+        <p>Targets elements with a specific class. Starts with a dot <code>.</code></p>
+        <code>.box { background: yellow; padding: 10px; }</code>
+
+        <h3>3. ID Selector</h3>
+        <p>Targets the element with a unique ID. Starts with <code>#</code>.</p>
+        <code>#header { font-size: 30px; }</code>
+
+        <h3>4. Universal Selector</h3>
+        <p>Applies to all elements.</p>
+        <code>* { margin: 0; padding: 0; }</code>
+
+        <h3>5. Group Selector</h3>
+        <p>Targets multiple elements at once.</p>
+        <code>h1, h2, p { font-family: Arial; }</code>
+
+        <h2>CSS Properties Examples</h2>
+
+        <h3>Text Properties</h3>
+        <ul>
+            <li><code>color:</code> Sets text color</li>
+            <li><code>font-size:</code> Changes size of text</li>
+            <li><code>text-align:</code> Aligns text (left, center, right)</li>
+            <li><code>font-weight:</code> Makes text bold</li>
+        </ul>
+
+        <h3>Box Model Properties</h3>
+        <ul>
+            <li><code>margin:</code> Space outside the element</li>
+            <li><code>padding:</code> Space inside the element</li>
+            <li><code>border:</code> Border around an element</li>
+            <li><code>width / height:</code> Size of the element</li>
+        </ul>
+
+        <h2>Example CSS Code</h2>
+        <div class="example-box">
+<pre>
+h1 {
+    color: #3498db;
+    text-align: center;
+    padding: 10px;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+}
+</pre>
+        </div>
+
+        <h2>Conclusion</h2>
+        <p>
+            CSS is essential for modern web development. It separates design from content, making websites faster,
+            easier to maintain, and visually better. Once you understand CSS selectors, properties, and the box model,
+            you can create beautiful and responsive webpages effortlessly.
+        </p>
+
+        <div class="footer">© Detailed CSS Notes Created by <br>Prem Ganesh</div>
+
+    </div>
+</body>
+</html>
