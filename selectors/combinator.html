@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1 {
+            color: red;
+        }
+
+        /* Direct child selector */
+        .parent > h2 {
+            color: blue;
+            background-color: tomato;
+        }
+
+        /* Descendant selector */
+        .parent h2 {
+            border: 2px solid black;
+        }
+
+        /* Adjacent sibling selector (p immediately before h2) */
+        .parent p + h2 {
+            font-size: 25px;
+        }
+
+        /* General sibling selector (any h2 after a p in same parent) */
+        .parent p ~ h2 {
+            text-decoration: underline;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="parent">
+        <h1>Welcome to CSS Selectors</h1>
+        <p>This section explains how CSS combinators work.</p>
+        <h2>Direct Child & Descendant Example</h2>
+        <h3>Understanding CSS Hierarchy</h3>
+        <p>Selectors help in styling elements effectively.</p>
+        <h4>Practice Makes Perfect</h4>
+        <p>Keep learning CSS.</p>
+    </div>
+
+    <div class="child">
+        <h1>Child Section</h1>
+        <p>This section is not styled by parent selectors.</p>
+        <h2>Normal Heading</h2>
+        <h3>Basic Content</h3>
+    </div>
+
+</body>
+</html>
