@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Animation Fix</title>
+
+<style>
+.nav{
+  height:200px;
+  width:300px;
+  background-color:rgb(255, 102, 0);
+  position:relative;
+  top: 200px;
+  left: 500px;
+  border-radius: 1000px;
+  border-style: dotted;
+  border-color: rgb(12, 52, 139);
+}
+.nav:hover{
+  animation: navMove 3s forwards;
+}
+.p{
+    color: white;
+}
+@keyframes navMove{
+  from{
+    height:200px;
+    width:300px;
+    top:200px;
+    left:500px;
+  }
+  to{
+    height:400px;
+    width:400px;
+    top:200px;
+    left:500px;
+    background-color:red;
+    transform: rotate(365deg)
+  }
+}
+</style>
+</head>
+
+<body>
+  <div class="nav">
+    <center><p>Hello Transform</p></center>
+  </div>
+</body>
+</html>
