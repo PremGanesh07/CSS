@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Full Page CSS Grid</title>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,body{
+  width:100%;
+  height:100%;
+}
+
+body{
+  background:#ffffff; 
+}
+
+.grid{
+  display:grid;
+  width:100vw;
+  height:100vh;
+  grid-template-columns:repeat(3, 1fr);
+  grid-template-rows:repeat(2, 1fr);
+  gap:20px;
+  padding:20px;
+}
+
+.box{
+  border-radius:6px;
+}
+
+.red{background:#ff6b6b;}
+.orange1{background:#ff8f66;}
+.orange2{background:#ffa36c;}
+.green1{background:#00a884;}
+.green2{background:#1abc9c;}
+.green3{background:#3ddc97;}
+</style>
+</head>
+<body>
+
+<div class="grid">
+  <div class="box red"></div>
+  <div class="box orange1"></div>
+  <div class="box orange2"></div>
+  <div class="box green1"></div>
+  <div class="box green2"></div>
+  <div class="box green3"></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Full Page Grid Layout</title>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html, body{
+  width:100%;
+  height:100%;
+}
+
+.container{
+  display:grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 1fr 2fr;
+  gap:12px;
+  width:100vw;
+  height:100vh;
+  padding:16px;
+  background:#f4f4f4;
+}
+
+/* Top bar */
+.top{
+  grid-column:1 / 3;
+  background:#ffb26b;
+}
+
+/* Left big box */
+.left{
+  background:#00a884;
+}
+
+/* Right section */
+.right{
+  display:grid;
+  grid-template-rows: 1fr 1fr;
+  gap:12px;
+}
+
+/* Right top */
+.right-top{
+  background:#2dd4bf;
+}
+
+/* Right bottom split */
+.right-bottom{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+}
+
+.red{background:#ff6b5c;}
+.orange{background:#ffb26b;}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="top"></div>
+
+  <div class="left"></div>
+
+  <div class="right">
+    <div class="right-top"></div>
+    <div class="right-bottom">
+      <div class="red"></div>
+      <div class="orange"></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
