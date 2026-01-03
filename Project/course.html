@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enlight - Courses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+       :root {
+            --purple: #7241dc;
+            --teal: #26a69a;
+            --dark: #1a1a1a;
+            --light-gray: #f8f9fa;
+        }
+
+        * { box-sizing: border-box; }
+        body { font-family: 'Raleway', sans-serif; margin: 0; color: #666; overflow-x: hidden; }
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+        
+        /* TOP BAR */
+        .top-bar { background: #fcfcfc; padding: 10px 0; border-bottom: 1px solid #eee; font-size: 13px; }
+        .top-flex { display: flex; justify-content: space-between; }
+        .social-icons a { color: #666; margin-left: 15px; text-decoration: none; }
+
+        /* NAVIGATION */
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; background: white; }
+        .logo { font-size: 28px; font-weight: 700; color: var(--purple); text-decoration: none; text-transform: uppercase; }
+        .logo span { color: var(--teal); }
+        .nav-links { display: flex; list-style: none; gap: 30px; margin: 0; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: 600; font-size: 14px; transition: 0.3s; }
+        .nav-links a.active, .nav-links a:hover { color: var(--purple); }
+.hero{background:#6c4bf4;color:#fff;padding:80px 60px}
+.featured{display:flex;gap:40px;padding:60px;background:#fff}
+.featured-text{max-width:400px}
+.featured-text button{margin-top:20px;padding:10px 25px;background:#4cd964;border:none;color:#fff;border-radius:20px}
+.featured-img{flex:1;background:url('https://images.unsplash.com/photo-1507842217343-583bb7270b66') center/cover}
+.courses{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;padding:60px}
+.course-card{background:#fff;display:flex;box-shadow:0 10px 25px rgba(0,0,0,.1)}
+.course-card img{width:200px;object-fit:cover}
+.course-card .content{padding:20px}
+.course-card button{margin-top:10px;padding:8px 20px;border:none;background:#4cd964;color:#fff;border-radius:20px}
+.teachers{text-align:center;padding:80px;background:#fff}
+.teacher-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:40px}
+.teacher img{width:100px;height:100px;border-radius:50%}
+.cta{background:#6c4bf4;color:#fff;padding:40px 60px;display:flex;justify-content:space-between}
+.cta button{padding:10px 30px;border:1px solid #fff;background:none;color:#fff;border-radius:30px}
+.footer{background:#000;color:#ccc;display:grid;grid-template-columns:repeat(3,1fr);padding:60px}
+.footer a{display:block;color:#ccc;margin:6px 0}
+</style>
+</head>
+<body>
+
+   <div class="top-bar">
+        <div class="container top-flex">
+            <div><i class="fa fa-envelope"></i> info@domain.com &nbsp;&nbsp; <i class="fa fa-phone"></i> +1 234 456 7890</div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="container navbar">
+        <a href="#" class="logo">Enlight<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="./index.html" class="active">Home</a></li>
+            <li><a href="./course.html">Courses</a></li>
+            <li><a href="./teachers.html">Teachers</a></li>
+            <li><a href="./events.html">Events</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+<section class="hero">
+  <h1>Our Courses</h1>
+</section>
+
+<section class="featured">
+  <div class="featured-text">
+    <span>FEATURED COURSE</span>
+    <h2>Chemical Engineering</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo veniam labore ratione illo vero voluptate.</p>
+    <button>Enroll now</button>
+  </div>
+  <div class="featured-img"></div>
+</section>
+
+<section class="courses">
+  <div class="course-card">
+    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1" />
+    <div class="content">
+      <h3>Application Design</h3>
+      <p>Laboriosam pariatur modi praesentium.</p>
+      <button>Enroll now</button>
+    </div>
+  </div>
+
+  <div class="course-card">
+    <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b" />
+    <div class="content">
+      <h3>Math Major</h3>
+      <p>Laboriosam pariatur modi praesentium.</p>
+      <button>Enroll now</button>
+    </div>
+  </div>
+
+  <div class="course-card">
+    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" />
+    <div class="content">
+      <h3>Chemical Engineering</h3>
+      <p>Laboriosam pariatur modi praesentium.</p>
+      <button>Enroll now</button>
+    </div>
+  </div>
+
+  <div class="course-card">
+    <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66" />
+    <div class="content">
+      <h3>English Major</h3>
+      <p>Laboriosam pariatur modi praesentium.</p>
+      <button>Enroll now</button>
+    </div>
+  </div>
+</section>
+
+<section class="teachers">
+  <h2>Meet Our Qualified Teachers</h2>
+  <div class="teacher-grid">
+    <div class="teacher">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" />
+      <h4>Chris Worth</h4>
+      <p>Physical Education</p>
+    </div>
+    <div class="teacher">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" />
+      <h4>Janet Morris</h4>
+      <p>English Teacher</p>
+    </div>
+    <div class="teacher">
+      <img src="https://randomuser.me/api/portraits/women/65.jpg" />
+      <h4>Linda Reyez</h4>
+      <p>Math Teacher</p>
+    </div>
+    <div class="teacher">
+      <img src="https://randomuser.me/api/portraits/women/22.jpg" />
+      <h4>Jessa Sy</h4>
+      <p>Physics Teacher</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Get your admission now!</h2>
+  <button>Enroll</button>
+</section>
+
+<footer class="footer">
+  <div class="footer-box">
+    <h3>About The School</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  </div>
+  <div class="footer-box">
+    <h3>Links</h3>
+    <a>Home</a><a>Courses</a><a>Teachers</a><a>Contact</a>
+  </div>
+  <div class="footer-box">
+    <h3>Contact Info</h3>
+    <p>198 West 21th Street, New York</p>
+    <p>info@domain.com</p>
+    <p>+123 456 7890</p>
+  </div>
+</footer>
+
+</body>
+</html>
+
+
+

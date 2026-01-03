@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+       :root {
+            --purple: #7241dc;
+            --teal: #26a69a;
+            --dark: #1a1a1a;
+            --light-gray: #f8f9fa;
+        }
+
+        * { box-sizing: border-box; }
+        body { font-family: 'Raleway', sans-serif; margin: 0; color: #666; overflow-x: hidden; }
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+        
+        /* TOP BAR */
+        .top-bar { background: #fcfcfc; padding: 10px 0; border-bottom: 1px solid #eee; font-size: 13px; }
+        .top-flex { display: flex; justify-content: space-between; }
+        .social-icons a { color: #666; margin-left: 15px; text-decoration: none; }
+
+        /* NAVIGATION */
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; background: white; }
+        .logo { font-size: 28px; font-weight: 700; color: var(--purple); text-decoration: none; text-transform: uppercase; }
+        .logo span { color: var(--teal); }
+        .nav-links { display: flex; list-style: none; gap: 30px; margin: 0; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: 600; font-size: 14px; transition: 0.3s; }
+        .nav-links a.active, .nav-links a:hover { color: var(--purple); }
+
+/* Hero */
+.hero{background:#6c4be6;color:#fff;padding:70px 0}
+.hero h1{font-size:36px}
+
+/* Contact Section */
+.contact{background:#fff;padding:70px 0}
+.contact-grid{display:grid;grid-template-columns:300px 1fr;gap:40px}
+
+/* Sidebar */
+.sidebar{background:#fff;box-shadow:0 5px 15px rgba(0,0,0,.1);padding:25px}
+.sidebar h4{margin-bottom:15px}
+.sidebar ul{list-style:none}
+.sidebar li{margin-bottom:10px}
+.sidebar a{text-decoration:none;color:#6c4be6;font-size:14px}
+
+/* Form */
+.form h2{margin-bottom:10px}
+.form p{font-size:13px;color:#777;margin-bottom:20px}
+.form label{display:block;font-size:12px;margin-bottom:5px;color:#777}
+.form input,.form textarea{
+  width:100%;
+  padding:10px;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+  border-radius:3px
+}
+.form textarea{height:120px;resize:none}
+.btn{
+  background:#3ecf8e;
+  color:#fff;
+  border:none;
+  padding:10px 25px;
+  border-radius:20px;
+  cursor:pointer
+}
+
+/* CTA */
+.cta{background:#6c4be6;color:#fff;padding:40px 0}
+.cta .container{display:flex;justify-content:space-between;align-items:center}
+.cta a{border:1px solid #fff;color:#fff;text-decoration:none;padding:10px 25px;border-radius:25px}
+
+/* Footer */
+footer{background:#000;color:#aaa;padding:50px 0}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px}
+footer h4{color:#fff;margin-bottom:10px}
+footer p,footer a{font-size:13px;color:#aaa;text-decoration:none}
+.copy{text-align:center;margin-top:30px;font-size:12px}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+        <div class="container top-flex">
+            <div><i class="fa fa-envelope"></i> info@domain.com &nbsp;&nbsp; <i class="fa fa-phone"></i> +1 234 456 7890</div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="container navbar">
+        <a href="#" class="logo">Enlight<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="./index.html" class="active">Home</a></li>
+            <li><a href="./course.html">Courses</a></li>
+            <li><a href="./teachers.html">Teachers</a></li>
+            <li><a href="./events.html">Events</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+<section class="hero">
+  <div class="container">
+    <h1>Contact Us</h1>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="container contact-grid">
+    <aside class="sidebar">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./course.html">Courses</a></li>
+        <li><a href="./teachers.html">Teachers</a></li>
+        <li><a href="./events.html">Events</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+      </ul>
+    </aside>
+
+    <div class="form">
+      <h2>Get In Touch</h2>
+      <p>Contact us using the form below</p>
+
+      <label>Full Name</label>
+      <input type="text">
+
+      <label>Email</label>
+      <input type="email">
+
+      <label>Subject</label>
+      <input type="text">
+
+      <label>Message</label>
+      <textarea></textarea>
+
+      <button class="btn">Send Message</button>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Get your admission now!</h2>
+    <a href="#">Enroll</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h4>About The School</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div>
+      <h4>Links</h4>
+      <p><a href="#">Home</a></p>
+      <p><a href="#">Courses</a></p>
+      <p><a href="#">Teachers</a></p>
+      <p><a href="#">Contact</a></p>
+    </div>
+    <div>
+      <h4>Contact Info</h4>
+      <p>📍 New York, NY</p>
+      <p>📧 info@email.com</p>
+      <p>📞 +123 456 7890</p>
+    </div>
+  </div>
+  <div class="copy">© 2027 Enlight. All Rights Reserved.</div>
+</footer>
+
+</body>
+</html>
