@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>School Events | Enlight</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --purple: #7241dc;
+            --teal: #26a69a;
+            --dark: #1a1a1a;
+            --light-gray: #f8f9fa;
+        }
+
+        * {
+             box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+
+            font-family: 'Raleway', sans-serif; 
+            color: #666; 
+            overflow-x: hidden; 
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1140px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        
+        /* TOP BAR - Standardized */
+        .top-bar {
+            background: #fcfcfc; 
+            padding: 10px 0; 
+            border-bottom: 1px solid #eee; 
+            font-size: 13px; 
+        }
+        .top-flex {
+             display: flex; justify-content: space-between; align-items: center; }
+        .social-icons a { 
+            color: #666; margin-left: 15px; text-decoration: none; transition: 0.3s; }
+        .social-icons a:hover {
+             color: var(--purple); }
+
+        /* NAVIGATION - Matches Index */
+        .navbar {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 25px 0; 
+            background: white; 
+        }
+        .logo { 
+            font-size: 28px; 
+            font-weight: 700; 
+            color: var(--purple); 
+            text-decoration: none; 
+            text-transform: uppercase; 
+        }
+        .logo span {
+             color: var(--teal); }
+        .nav-links { 
+            display: flex; list-style: none; gap: 30px; margin: 0; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: #333; 
+            font-weight: 600; 
+            font-size: 14px; 
+            transition: 0.3s; 
+        }
+        .nav-links a.active, .nav-links a:hover { 
+            color: var(--purple); }
+
+        /* HERO */
+        .hero {
+            background: #6c4be6;
+            color: #fff;
+            padding: 80px 0 120px; /* Extra bottom padding for overlap */
+            text-align: left;
+        }
+        .hero h1 { 
+            font-size: clamp(2.2rem, 5vw, 3rem); font-weight: 700; }
+
+        /* FEATURED EVENT */
+        .featured { 
+            display: grid; 
+            grid-template-columns: 350px 1fr; 
+            gap: 0; 
+            margin-top: -60px; 
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        .featured-card {
+             padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+        .featured-card small { 
+            color: var(--teal); font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; display: block; }
+        .featured-card h3 {
+             color: #333; font-size: 24px; margin-bottom: 15px; }
+        .featured-card p { 
+            margin-bottom: 10px; font-size: 14px; }
+        .featured-img {
+             min-height: 300px; background: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94') center/cover; }
+        
+        .btn-green {
+            display: inline-block;
+            background: var(--teal);
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            width: fit-content;
+            transition: 0.3s;
+        }
+        .btn-green:hover { 
+            background: #1f8a7f; transform: translateY(-2px); }
+
+        /* EVENTS GRID */
+        .events-section { 
+            padding: 80px 0; background: var(--light-gray); }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .event-item { 
+            background: #fff; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .event-item:hover { 
+            transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
+        .event-item img {
+             width: 100%; height: 220px; object-fit: cover; }
+        .event-item .info { 
+            padding: 25px; }
+        .event-item h4 {
+             color: #333; margin-bottom: 8px; font-size: 18px; }
+        .event-item p { 
+            font-size: 14px; color: #888; }
+
+        /* CTA */
+        .cta { 
+            background: #6c4be6; color: #fff; padding: 50px 0; }
+        .cta-flex { 
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .cta-btn { 
+            border: 2px solid #fff; 
+            padding: 12px 30px; 
+            border-radius: 50px; 
+            color: #fff; 
+            text-decoration: none; 
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .cta-btn:hover {
+             background: #fff; color: #6c4be6; }
+
+        /* FOOTER */
+        footer {
+             background: #111; color: #999; padding: 70px 0 20px; }
+        .footer-grid {
+             display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        footer h4 {
+             color: #fff; margin-bottom: 25px; font-size: 18px; }
+        footer a { 
+            color: #999; text-decoration: none; display: block; margin-bottom: 10px; font-size: 14px; }
+        footer a:hover { 
+            color: #fff; }
+        .copy { 
+            text-align: center; border-top: 1px solid #222; padding-top: 20px; font-size: 12px; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 15px; }
+            .nav-links { gap: 15px; }
+            .featured { grid-template-columns: 1fr; margin-top: -40px; }
+            .cta-flex { justify-content: center; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container top-flex">
+            <div><i class="fa fa-envelope"></i> apremganesh07@gmail.com &nbsp;&nbsp; <i class="fa fa-phone"></i> 9704133435</div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="container navbar">
+        <a href="index.html" class="logo">Enlight School of Excellence<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="course.html">Courses</a></li>
+            <li><a href="teachers.html">Teachers</a></li>
+            <li><a href="events.html" class="active">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Upcoming School Events</h1>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="featured">
+            <div class="featured-card">
+                <small>FEATURED EVENT</small>
+                <h3>Student Math Competition</h3>
+                <p>Join us for the annual inter-school math challenge.</p>
+                <p><strong><i class="far fa-calendar-alt"></i> August 15, 2026</strong><br>
+                   <strong><i class="fas fa-map-marker-alt"></i> Main Hall, Enlight Campus</strong></p>
+                <a class="btn-green" href="#">Learn More</a>
+            </div>
+            <div class="featured-img"></div>
+        </div>
+    </section>
+
+    <section class="events-section">
+        <div class="container">
+            <div class="grid">
+                <div class="event-item">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" alt="Graduation">
+                    <div class="info">
+                        <h4>Annual Graduation Day</h4>
+                        <p><i class="far fa-calendar"></i> June 20, 2026 · Enlight Field</p>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4" alt="Music">
+                    <div class="info">
+                        <h4>Spring Music Festival</h4>
+                        <p><i class="far fa-calendar"></i> May 12, 2026 · Arts Center</p>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7" alt="Science">
+                    <div class="info">
+                        <h4>National Science Fair</h4>
+                        <p><i class="far fa-calendar"></i> September 05, 2026 · Lab Plaza</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container cta-flex">
+            <h2>Ready to join our community?</h2>
+            <a href="#" class="cta-btn">Enroll Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <h4>About Enlight</h4>
+                <p>Empowering the leaders of tomorrow through holistic education and innovation since 1996.</p>
+            </div>
+            <div>
+                <h4>Navigation</h4>
+                <a href="index.html">Home</a>
+                <a href="course.html">Courses</a>
+                <a href="teachers.html">Teachers</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div>
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Kukatpally, Hyderabad, Telangana.</p>
+                <p><i class="fas fa-envelope"></i> apremganesh07@gmail.com</p>
+                <p><i class="fas fa-phone"></i> 9704133435</p>
+            </div>
+        </div>
+        <div class="copy">© 2026 Enlight School of Excellence. All Rights Reserved. <p> Designed by Prem Ganesh</p></div>
+    </footer>
+
+</body>
+</html>
