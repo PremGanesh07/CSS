@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENLIGHT - School of Excellence</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --purple: #7241dc;
+            --teal: #26a69a;
+            --dark: #1a1a1a;
+            --light-gray: #f8f9fa;
+            --bg-purple: #7b43f1;
+        }
+
+        * { 
+            box-sizing: border-box; margin: 0; padding: 0; 
+        }
+        body { 
+            font-family: 'Raleway', sans-serif; color: #666; overflow-x: hidden; line-height: 1.6; 
+        }
+        .container { 
+            max-width: 1140px; margin: 0 auto; padding: 0 20px; 
+        }
+
+        /* NAVIGATION */
+        .top-bar { 
+            background: #fcfcfc; padding: 10px 0; border-bottom: 1px solid #eee; font-size: 13px; 
+        }
+        .top-flex {
+             display: flex; justify-content: space-between; 
+            }
+        .social-icons a {
+             color: #666; margin-left: 15px; text-decoration: none; 
+            }
+        .navbar { 
+            display: flex; justify-content: space-between; align-items: center; padding: 25px 0; 
+        }
+        .logo {
+             font-size: 28px; font-weight: 700; color: var(--purple); text-decoration: none; 
+            }
+        .logo span { 
+            color: var(--teal); 
+        }
+        .nav-links {
+             display: flex; list-style: none; gap: 25px;
+             }
+        .nav-links a {
+             text-decoration: none; color: #000; font-weight: 600; font-size: 14px; transition: 0.3s; 
+            }
+        .nav-links a.active, .nav-links a:hover {
+             color: var(--purple);
+             }
+
+        /* HERO SLIDER */
+        .hero {
+            height: 75vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+            background: #000;
+        }
+        .hero-slideshow {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.8s ease-in-out;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+        .hero-content { 
+            position: relative; z-index: 3; }
+        .hero h1 { 
+            font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 10px; }
+
+        /* ARROW CONTROLS */
+        .slider-arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 10;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        .arrow {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #fff;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+        .arrow:hover {
+            background: var(--teal);
+            border-color: var(--teal);
+            transform: scale(1.1);
+        }
+
+        /* WELCOME SECTION */
+        .welcome-section {
+             background-color: var(--bg-purple); padding: 100px 0; 
+            }
+        .welcome-title {
+             color: #fff; font-size: 32px; margin-bottom: 40px; text-align: center; 
+            }
+        .welcome-box { 
+            display: flex; background: #fff; border-radius: 8px; overflow: hidden; min-height: 450px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .welcome-text {
+             flex: 1; padding: 60px; display: flex; flex-direction: column; justify-content: center; 
+            }
+        .welcome-text h3 { 
+            color: var(--purple); font-size: 26px; margin-bottom: 20px; 
+        }
+        .btn-learn { 
+            display: inline-block; width: fit-content; padding: 14px 35px; background: var(--teal); color: #fff; text-decoration: none; border-radius: 30px; font-weight: 600; transition: 0.3s; }
+        
+        .welcome-video-container { 
+            flex: 1; position: relative; background: #000; }
+        .video-placeholder { 
+
+            position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 2; 
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800');
+            background-size: cover; background-position: center; cursor: pointer;
+        }
+        .play-btn-circle {
+             width: 80px; height: 80px; background: var(--teal); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; transition: 0.4s ease; }
+        #inlineVideo {
+             width: 100%; height: 100%; border: none; display: none; 
+            }
+
+        /* STATS & HIGHLIGHTS */
+        .stats-grid { 
+            display: grid; grid-template-columns: repeat(4, 1fr); padding: 80px 0; gap: 20px; text-align: center; 
+        }
+        .stat-item i { 
+            font-size: 40px; color: var(--purple); margin-bottom: 15px; 
+        }
+        .stat-item h2 {
+             color: #333; font-size: 32px; 
+            }
+
+        .highlights {
+             padding: 80px 0; background: var(--light-gray); text-align: center; 
+            }
+        .tab-nav { 
+            margin-bottom: 40px; 
+        }
+        .tab-btn {
+             padding: 12px 30px; border: none; background: #e0e0e0; cursor: pointer; font-weight: 600; margin: 0 5px; border-radius: 5px; transition: 0.3s; }
+        .tab-btn.active { 
+            background: var(--teal); color: white;
+         }
+        .tab-content {
+             display: none; 
+            }
+        .tab-content.active { 
+            display: block; animation: fadeIn 0.5s ease; 
+        }
+
+        @keyframes fadeIn {
+             from { opacity: 0; } to { opacity: 1; }
+             }
+
+        .grid-3 { 
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; 
+        }
+        .news-card { 
+            background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+         }
+        .news-img {
+             height: 200px; background-size: cover; background-position: center; 
+            }
+        .ni1 {
+             background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644');
+             }
+        .ni2 {
+             background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7'); 
+            }
+        .ni3 { 
+            background-image: url('https://images.unsplash.com/photo-1519452575417-564c1401ecc0');
+         }
+        .ei1 {
+             background-image: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94'); 
+            }
+        .ei2 { 
+            background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644'); 
+        }
+        .ei3 {
+             background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4'); 
+            }
+        .news-body { 
+            padding: 25px; text-align: left; 
+        }
+
+        /* FOOTER  */
+        .footer { 
+            background: var(--dark); color: #bbb; padding: 80px 0;
+         }
+        .footer-grid {
+             display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px;
+             }
+        .footer h4 {
+             color: #fff; margin-bottom: 25px; font-size: 18px; text-transform: uppercase; letter-spacing: 1px;}
+        .footer ul {
+             list-style: none; 
+            }
+        .footer ul li {
+             margin-bottom: 12px; 
+            }
+        .footer ul li a { 
+            color: #fff; /* Changed to White */
+            text-decoration: none; 
+            transition: 0.3s; 
+            font-size: 14px;
+            font-weight: 400;
+        }
+        .footer ul li a:hover { 
+            color: var(--teal); /* Highlights in Teal */
+            padding-left: 5px; 
+        }
+        .footer p {
+             font-size: 14px; line-height: 1.8;
+             }
+        .copy { 
+            text-align: center; border-top: 1px solid #222; padding-top: 20px; font-size: 12px; 
+        }
+
+        @media (max-width: 992px) {
+            .grid-3, .stats-grid, .footer-grid { grid-template-columns: 1fr; }
+            .welcome-box { flex-direction: column; }
+            .welcome-video-container { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container top-flex">
+            <div><i class="fa fa-envelope"></i> apremganesh07@gmail.com &nbsp;&nbsp; <i class="fa fa-phone"></i> 9704133435</div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="container navbar">
+        <a href="index.html" class="logo">ENLIGHT SCHOOL OF EXCELLENCE<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="./index.html" class="active">Home</a></li>
+            <li><a href="./course.html">Courses</a></li>
+            <li><a href="./teachers.html">Teachers</a></li>
+            <li><a href="./events.html">Events</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="slider-arrows">
+            <div class="arrow" onclick="moveSlide(-1)"><i class="fa fa-chevron-left"></i></div>
+            <div class="arrow" onclick="moveSlide(1)"><i class="fa fa-chevron-right"></i></div>
+        </div>
+        <div class="hero-slideshow" id="mainSlider"></div>
+        <div class="container hero-content">
+            <h1>Your Bright Future is Our Mission</h1>
+            <p>Providing quality education for everyone.</p>
+        </div>
+    </section>
+
+    <section class="welcome-section">
+        <div class="container">
+            <h1 class="welcome-title">Welcome to School of Excellence</h1>
+            <div class="welcome-box">
+                <div class="welcome-text">
+                    <h3>About School</h3>
+                    <p>Enlight is a free education website template. You can use this for your school, college or university.</p>
+                    <a href="#" class="btn-learn">Learn More</a>
+                </div>
+                <div class="welcome-video-container">
+                    <div class="video-placeholder" id="videoPlaceholder" onclick="playInBox()">
+                        <div class="play-btn-circle"><i class="fa fa-play"></i></div>
+                    </div>
+                    <iframe id="inlineVideo" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container stats-grid">
+        <div class="stat-item"><i class="fa fa-graduation-cap"></i><h2>20,203</h2><p>Students Enrolled</p></div>
+        <div class="stat-item"><i class="fa fa-user-tie"></i><h2>139</h2><p>Certified Teachers</p></div>
+        <div class="stat-item"><i class="fa fa-university"></i><h2>99%</h2><p>Passing to Universities</p></div>
+        <div class="stat-item"><i class="fa fa-smile"></i><h2>100%</h2><p>Parents Satisfaction</p></div>
+    </div>
+
+    <section class="highlights">
+        <div class="container">
+            <h2>School Highlights</h2>
+            <div class="tab-nav">
+                <button class="tab-btn active" onclick="showTab('news')">Featured News</button>
+                <button class="tab-btn" onclick="showTab('events')">Upcoming Events</button>
+            </div>
+            <div id="news" class="tab-content active">
+                <div class="grid-3">
+                    <div class="news-card"><div class="news-img ni1"></div><div class="news-body"><h4>Campus Expansion</h4><p>July 9, 2025</p></div></div>
+                    <div class="news-card"><div class="news-img ni2"></div><div class="news-body"><h4>Science Fair</h4><p>July 10, 2025</p></div></div>
+                    <div class="news-card"><div class="news-img ni3"></div><div class="news-body"><h4>New Sports Arena</h4><p>July 11, 2025</p></div></div>
+                </div>
+            </div>
+            <div id="events" class="tab-content">
+                <div class="grid-3">
+                    <div class="news-card"><div class="news-img ei1"></div><div class="news-body"><h4>Open House 2026</h4><p>Aug 15, 2026</p></div></div>
+                    <div class="news-card"><div class="news-img ei2"></div><div class="news-body"><h4>Graduation Day</h4><p>June 20, 2026</p></div></div>
+                    <div class="news-card"><div class="news-img ei3"></div><div class="news-body"><h4>Alumni Meetup</h4><p>Dec 10, 2025</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <h4>About Enlight</h4>
+                <p>Providing excellence since 1990. We are committed to fostering an environment where every student can achieve their full potential.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./course.html">Courses</a></li>
+                    <li><a href="./teachers.html">Teachers</a></li>
+                    <li><a href="./events.html">Events</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p>Kukatpally, Hyderabad, Telangana.</p>
+                <p style="margin-top: 10px;"><i class="fa fa-envelope" style="color: var(--teal);"></i> apremganesh07@gmail.com</p>
+                <p><i class="fa fa-phone" style="color: var(--teal);"></i> 9704133435</p>
+            </div>
+        </div>
+        <div class="copy">© 2026 Enlight School of Excellence. All Rights Reserved.<p> Designed by Prem Ganesh</p></div>
+    </footer>
+
+    <script>
+        const slideImages = [
+            'https://rsrec.edu.in/userfiles/image/Website/College%20Gallery/College%20Front.jpg',
+            'https://rsrec.edu.in/userfiles/image/Website/College%20Gallery/College%20Plan.JPG',
+            'https://scontent.fhyd1-3.fna.fbcdn.net/v/t39.30808-6/471106397_613352208029776_2005852357019105975_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=109&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=rvheEmxv9dwQ7kNvwEO4hz-&_nc_oc=Adm9MmU8XdaDaeBsxv2rTbx-48pfj0bccHoiJEeFEogdJWf-Tof4yhEbTNt0D3GAmaVnYsMsqjLmePEoVNTRLHZk&_nc_zt=23&_nc_ht=scontent.fhyd1-3.fna&_nc_gid=iFLanypKbw-i5fIQR4j3Vw&oh=00_AfoDhy2qAHjnqIfgfDY5RtEmikgUuZ9MmOAuheeWoBPKng&oe=6967F8A1'
+        ];
+        
+        let currentIndex = 0;
+        const slider = document.getElementById('mainSlider');
+
+        function updateSlider() {
+            slider.style.backgroundImage = `url('${slideImages[currentIndex]}')`;
+        }
+
+        function moveSlide(step) {
+            currentIndex += step;
+            if (currentIndex >= slideImages.length) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = slideImages.length - 1;
+            updateSlider();
+        }
+
+        updateSlider();
+
+        function showTab(id) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function playInBox() {
+    const video = document.getElementById('inlineVideo');
+    const placeholder = document.getElementById('videoPlaceholder');
+    
+    // Corrected: Only the URL goes here, with autoplay added
+    video.src = "https://www.youtube.com/embed/aJxziprtWUQ?autoplay=1&si=j4bwZmtQoozxjei2";
+    
+    video.style.display = 'block';
+    placeholder.style.display = 'none';
+}
+    </script>
+</body>
+</html>

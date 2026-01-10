@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enlight - Our Courses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --purple: #7241dc;
+            --teal: #26a69a;
+            --dark: #1a1a1a;
+            --light-gray: #f8f9fa;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Raleway', sans-serif; 
+            color: #666; 
+            overflow-x: hidden; 
+            line-height: 1.6;
+        }
+
+        .container { 
+            max-width: 1140px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        
+        /* TOP BAR - Matches Index */
+        .top-bar { 
+            background: #fcfcfc; 
+            padding: 10px 0; 
+            border-bottom: 1px solid #eee; 
+            font-size: 13px; 
+        }
+        .top-flex { 
+            display: flex; justify-content: space-between; align-items: center; }
+        .social-icons a {
+             color: #666; margin-left: 15px; text-decoration: none; transition: 0.3s; }
+        .social-icons a:hover {
+             color: var(--purple); }
+
+        /* NAVIGATION - Matches Index */
+        .navbar { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 25px 0; 
+            background: white; 
+        }
+        .logo { 
+            font-size: 28px; 
+            font-weight: 700; 
+            color: var(--purple); 
+            text-decoration: none; 
+            text-transform: uppercase; 
+        }
+        .logo span { 
+            color: var(--teal); }
+        .nav-links { 
+            display: flex; list-style: none; gap: 30px; margin: 0; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: #333; 
+            font-weight: 600; 
+            font-size: 14px; 
+            transition: 0.3s; 
+        }
+        .nav-links a.active, .nav-links a:hover {
+             color: var(--purple); }
+
+        /* HERO */
+        .hero {
+            background: #6c4bf4;
+            color: #fff;
+            padding: 80px 0;
+            text-align: left;
+        }
+        .hero h1 {
+             font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; }
+
+        /* FEATURED SECTION */
+        .featured {
+             padding: 80px 0; background: #fff; }
+        .featured-flex { 
+            display: flex; gap: 50px; align-items: center; flex-wrap: wrap; }
+        .featured-text {
+             flex: 1; min-width: 300px; }
+        .featured-text span { 
+            color: var(--teal); font-weight: 700; font-size: 14px; letter-spacing: 1px; }
+        .featured-text h2 { 
+            color: #333; font-size: 32px; margin: 10px 0 20px; }
+        .btn-green {
+            padding: 12px 30px;
+            background: #4cd964;
+            border: none;
+            color: #fff;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-green:hover { 
+            background: #3ebf53; transform: translateY(-2px); }
+        .featured-img { 
+            flex: 1; 
+            min-width: 300px; 
+            height: 350px; 
+            background: url('https://img.freepik.com/free-photo/research-innovation-items-world-science-day-celebration_23-2151812408.jpg?semt=ais_hybrid&w=740&q=80') center/cover; 
+            border-radius: 8px;
+        }
+
+        /* COURSES GRID */
+        .courses-section { 
+            padding: 80px 0; background: var(--light-gray); }
+        .courses-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+            gap: 30px; 
+        }
+        .course-card { 
+            background: #fff; 
+            display: flex; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+            border-radius: 8px; 
+            overflow: hidden; 
+            transition: 0.3s;
+        }
+        .course-card:hover {
+             transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .course-card img {
+             width: 40%; object-fit: cover; }
+        .course-card .content {
+             padding: 30px; width: 60%; }
+        .course-card h3 { 
+            color: #333; margin-bottom: 10px; font-size: 20px; }
+        .course-card p { 
+            font-size: 14px; margin-bottom: 20px; }
+
+        /* TEACHERS */
+        .teachers { 
+            text-align: center; padding: 80px 0; background: #fff; }
+        .teachers h2 { 
+            margin-bottom: 40px; color: #333; }
+        .teacher-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 30px; 
+        }
+        .teacher img { 
+            width: 100px; height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; border: 3px solid var(--light-gray); }
+        .teacher h4 { 
+            color: #333; }
+        .teacher p { 
+            font-size: 13px; color: var(--purple); font-weight: 600; }
+
+        /* CTA */
+        .cta {
+             background: #6c4bf4; color: #fff; padding: 50px 0; }
+        .cta-flex {
+             display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .cta-btn {
+
+            padding: 12px 35px; 
+            border: 2px solid #fff; 
+            background: none; 
+            color: #fff; 
+            border-radius: 30px; 
+            font-weight: 600; 
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .cta-btn:hover { 
+            background: #fff; color: #6c4bf4; }
+
+        /* FOOTER */
+        .footer { 
+            background: #111; color: #999; padding: 70px 0; }
+        .footer-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .footer h3 { 
+            color: #fff; margin-bottom: 25px; font-size: 18px; }
+        .footer a {
+             display: block; color: #999; text-decoration: none; margin-bottom: 10px; font-size: 14px; transition: 0.3s; }
+        .footer a:hover { 
+            color: #fff; }
+        .copy { 
+            text-align: center; border-top: 1px solid #222; padding-top: 20px; font-size: 12px; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 15px; }
+            .nav-links { gap: 15px; }
+            .courses-grid { grid-template-columns: 1fr; }
+            .course-card { flex-direction: column; }
+            .course-card img { width: 100%; height: 200px; }
+            .course-card .content { width: 100%; }
+            .cta-flex { justify-content: center; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container top-flex">
+            <div><i class="fa fa-envelope"></i> apremganesh07@gmail.com &nbsp;&nbsp; <i class="fa fa-phone"></i> 9704133435</div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="container navbar">
+        <a href="index.html" class="logo">Enlight School of Excellence<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="course.html" class="active">Courses</a></li>
+            <li><a href="teachers.html">Teachers</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Our Courses</h1>
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="container featured-flex">
+            <div class="featured-text">
+                <span>FEATURED COURSE</span>
+                <h2>Chemical Engineering</h2>
+                <p>Explore the fascinating world of chemical processes and materials. Our program combines theory with hands-on lab experience to prepare you for a global career.</p>
+                <button class="btn-green">Enroll now</button>
+            </div>
+            <div class="featured-img"></div>
+        </div>
+    </section>
+
+    <section class="courses-section">
+        <div class="container">
+            <div class="courses-grid">
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97" alt="App Design" />
+                    <div class="content">
+                        <h3>Application Design</h3>
+                        <p>Master UI/UX and mobile app logic from scratch.</p>
+                        <button class="btn-green">Enroll now</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <img src="https://www.geteducated.com/wp-content/uploads/2022/09/math-majors.jpg" alt="Math" />
+                    <div class="content">
+                        <h3>Math Major</h3>
+                        <p>Deep dive into advanced calculus and statistics.</p>
+                        <button class="btn-green">Enroll now</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d" alt="Science" />
+                    <div class="content">
+                        <h3>Chemical Engineering</h3>
+                        <p>Sustainable energy and biochemical breakthroughs.</p>
+                        <button class="btn-green">Enroll now</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8" alt="English" />
+                    <div class="content">
+                        <h3>English Major</h3>
+                        <p>Classical literature and creative writing excellence.</p>
+                        <button class="btn-green">Enroll now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="teachers">
+        <div class="container">
+            <h2>Meet Our Qualified Teachers</h2>
+            <div class="teacher-grid">
+                <div class="teacher">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" />
+                    <h4>Chris Worth</h4>
+                    <p>Physical Education</p>
+                </div>
+                <div class="teacher">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" />
+                    <h4>Janet Morris</h4>
+                    <p>English Teacher</p>
+                </div>
+                <div class="teacher">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" />
+                    <h4>Linda Reyez</h4>
+                    <p>Math Teacher</p>
+                </div>
+                <div class="teacher">
+                    <img src="https://randomuser.me/api/portraits/women/22.jpg" />
+                    <h4>Jessa Sy</h4>
+                    <p>Physics Teacher</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container cta-flex">
+            <h2>Get your admission now!</h2>
+            <button class="cta-btn"><a href="./contact.html"> Enroll Today</a></button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-box">
+                <h3>About The School</h3>
+                <p>Enlight is dedicated to empowering students through innovative learning and community engagement.</p>
+            </div>
+            <div class="footer-box">
+                <h3>Links</h3>
+                <a href="index.html">Home</a>
+                <a href="course.html">Courses</a>
+                <a href="teachers.html">Teachers</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-box">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Kukatpally, Hyderabad, Telangana.</p>
+                <p><i class="fas fa-envelope"></i> apremganesh07@gmail.com</p>
+                <p><i class="fas fa-phone"></i> 9704133435</p>
+            </div>
+        </div>
+        <div class="copy">© 2026 Enlight School of Excellence. All Rights Reserved. <p> Designed by Prem Ganesh</p></div>
+    </footer>
+
+</body>
+</html>

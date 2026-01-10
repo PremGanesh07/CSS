@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlight - Our Teachers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --purple: #7241dc;
+            --teal: #26a69a;
+            --dark: #1a1a1a;
+            --light-gray: #f8f9fa;
+            --hero-bg: #6c4bf4;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Raleway', sans-serif; 
+            color: #666; 
+            overflow-x: hidden; 
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1140px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+
+        /* TOP BAR - Exact match to index.html */
+        .top-bar { 
+            background: #fcfcfc; 
+            padding: 10px 0; 
+            border-bottom: 1px solid #eee; 
+            font-size: 13px; 
+        }
+        .top-flex {
+             display: flex; justify-content: space-between; align-items: center; }
+        .social-icons a {
+             color: #666; margin-left: 15px; text-decoration: none; transition: 0.3s; }
+        .social-icons a:hover { 
+            color: var(--purple); }
+
+        /* NAVIGATION - Exact match to index.html */
+        .navbar { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 25px 0; 
+            background: white; 
+        }
+        .logo { 
+            font-size: 28px; 
+            font-weight: 700; 
+            color: var(--purple); 
+            text-decoration: none; 
+            text-transform: uppercase; 
+        }
+        .logo span { 
+            color: var(--teal); }
+        .nav-links { 
+            display: flex; list-style: none; gap: 30px; margin: 0; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: #333; 
+            font-weight: 600; 
+            font-size: 14px; 
+            transition: 0.3s; 
+        }
+        .nav-links a.active, .nav-links a:hover { 
+            color: var(--purple); }
+
+        /* HERO */
+        .hero {
+            background: var(--hero-bg);
+            color: #fff;
+            padding: 80px 0;
+            text-align: left;
+        }
+        .hero h1 { 
+            font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; }
+
+        /* INTRO SECTION */
+        .intro { 
+            padding: 80px 0; background: #fff; }
+        .intro-flex { 
+            display: flex; gap: 50px; align-items: center; flex-wrap: wrap; }
+        .intro-text { 
+            flex: 1; min-width: 300px; }
+        .intro-text h3 { 
+            color: #333; font-size: 28px; margin-bottom: 20px; line-height: 1.3; }
+        .intro-text p { 
+            margin-bottom: 25px; color: #777; }
+        .btn-green {
+            padding: 12px 30px;
+            background: #4cd964;
+            border: none;
+            color: #fff;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-green:hover { 
+            background: #3ebf53; transform: translateY(-2px); }
+        .intro-img { 
+            flex: 1; 
+            min-width: 300px; 
+            height: 350px; 
+            background: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66') center/cover; 
+            border-radius: 8px;
+        }
+
+        /* TEACHERS GRID */
+        .teachers { 
+            padding: 80px 0; background: var(--light-gray); }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 30px; 
+        }
+        .card { 
+            background: #fff;
+            text-align: center; 
+            padding: 40px 20px; 
+            border: 1px solid #eee; 
+            transition: 0.3s;
+            border-radius: 5px;
+        }
+        .card:hover { 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); transform: translateY(-5px); }
+        .card img { 
+            width: 100px; height: 100px; border-radius: 50%; margin-bottom: 20px; object-fit: cover; }
+        .card h4 {
+             color: #333; margin-bottom: 5px; font-size: 18px; }
+        .card p {
+             font-size: 14px; color: var(--purple); font-weight: 500; }
+        .social {
+             margin-top: 15px; color: #ccc; font-size: 14px; letter-spacing: 5px; }
+
+        /* CTA */
+        .cta { 
+            background: var(--hero-bg); 
+            color: #fff; 
+            padding: 50px 0; 
+        }
+        .cta-flex {
+             display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .cta h2 { 
+            font-size: 26px; }
+        .cta-btn { 
+            padding: 12px 35px; 
+            border: 2px solid #fff; 
+            background: none; 
+            color: #fff; 
+            border-radius: 30px; 
+            font-weight: 600; 
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .cta-btn:hover {
+             background: #fff; color: var(--hero-bg); }
+
+        /* FOOTER */
+        .footer { 
+            background: #111; 
+            color: #999; 
+            padding: 70px 0; 
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        .footer h3 { 
+            color: #fff; margin-bottom: 25px; font-size: 18px; }
+        .footer p { 
+            font-size: 14px; margin-bottom: 10px; }
+        .copy { 
+            text-align: center; border-top: 1px solid #222; padding-top: 20px; font-size: 12px; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 15px; }
+            .nav-links { gap: 15px; }
+            .cta-flex { justify-content: center; text-align: center; }
+            .intro-flex { text-align: center; }
+            .intro-text { order: 2; }
+            .intro-img { order: 1; width: 100%; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div class="container top-flex">
+            <div><i class="fa fa-envelope"></i> apremganesh07@gmail.com &nbsp;&nbsp; <i class="fa fa-phone"></i> 9704133435</div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="container navbar">
+        <a href="index.html" class="logo">Enlight School of Excellence<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="course.html">Courses</a></li>
+            <li><a href="teachers.html" class="active">Teachers</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Our Teachers</h1>
+        </div>
+    </section>
+
+    <section class="intro">
+        <div class="container intro-flex">
+            <div class="intro-text">
+                <h3>We Hired Certified Teachers<br>For Our Students</h3>
+                <p>Our educators bring years of academic and industry experience to the classroom, ensuring your child receives the highest quality guidance and mentorship.</p>
+                <button class="btn-green">Learn More</button>
+            </div>
+            <div class="intro-img"></div>
+        </div>
+    </section>
+
+    <section class="teachers">
+        <div class="container">
+            <div class="grid">
+                <div class="card">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Teacher">
+                    <h4>Chris Worth</h4>
+                    <p>Physical Education</p>
+                    <div class="social"><i class="fab fa-twitter"></i> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></div>
+                </div>
+                <div class="card">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Teacher">
+                    <h4>Janet Morris</h4>
+                    <p>English Teacher</p>
+                    <div class="social"><i class="fab fa-twitter"></i> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></div>
+                </div>
+                <div class="card">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Teacher">
+                    <h4>Linda Reyez</h4>
+                    <p>Math Teacher</p>
+                    <div class="social"><i class="fab fa-twitter"></i> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></div>
+                </div>
+                <div class="card">
+                    <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Teacher">
+                    <h4>Jessa Sy</h4>
+                    <p>Physics Teacher</p>
+                    <div class="social"><i class="fab fa-twitter"></i> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></div>
+                </div>
+                <div class="card"><img src="https://randomuser.me/api/portraits/men/85.jpg"><h4>Mark Stevens</h4><p>Chemistry</p><div class="social"><i class="fab fa-twitter"></i> <i class="fab fa-facebook"></i></div></div>
+                <div class="card"><img src="https://randomuser.me/api/portraits/women/12.jpg"><h4>Sarah Bloom</h4><p>Art History</p><div class="social"><i class="fab fa-twitter"></i> <i class="fab fa-instagram"></i></div></div>
+                <div class="card"><img src="https://randomuser.me/api/portraits/men/41.jpg"><h4>David Gills</h4><p>Computer Science</p><div class="social"><i class="fab fa-twitter"></i> <i class="fab fa-facebook"></i></div></div>
+                <div class="card"><img src="https://randomuser.me/api/portraits/women/50.jpg"><h4>Elena Rossi</h4><p>Biology</p><div class="social"><i class="fab fa-instagram"></i> <i class="fab fa-facebook"></i></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container cta-flex">
+            <h2>Get your admission now!</h2>
+            <button class="cta-btn"><a href="./contact.html">Enroll Today</a></button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <h3>About The School</h3>
+                <p>Enlight School of Excellence has been a leader in education for over 30 years, fostering growth and innovation.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <p>Home</p>
+                <p>Courses</p>
+                <p>Teachers</p>
+                <p>Contact</p>
+            </div>
+            <div>
+                <h3>Contact Info</h3>
+                <p>Kukatpally, Hyderabad, Telangana.</p>
+                <p>apremganesh07@gmail.com</p>
+                <p>9704133435</p>
+            </div>
+        </div>
+        <div class="copy">© 2026 Enlight School of Excellence. All Rights Reserved.<p> Designed by Prem Ganesh</p></div>
+    </footer>
+
+</body>
+</html>
