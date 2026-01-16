@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sun Animation</title>
+
+<style>
+body{
+  margin:0;
+  overflow:hidden;
+}
+
+/* background image */
+.bg img{
+  width:100vw;
+  height:100vh;
+  position:fixed;
+  top:0;
+  left:0;
+  object-fit:cover;
+  z-index:-2;
+}
+
+/* main sun (TOP VALUE CHANGED) */
+.sun{
+  height:200px;
+  width:200px;
+  background-color:rgb(229,151,7);
+  border-radius:50%;
+  position:absolute;
+  top:180px;   /* changed */
+  left:620px;
+  z-index:2;
+}
+
+/* glowing shadow (TOP VALUE CHANGED) */
+.shadow{
+  height:200px;
+  width:200px;
+  border-radius:50%;
+  position:absolute;
+  top:200px;   /* changed */
+  left:650px;
+  background-color:yellow;
+  animation:move 6s ease-in-out infinite alternate;
+  z-index:1;
+}
+
+/* animation with updated TOP values */
+@keyframes move{
+  0%{
+    top:200px;
+    left:650px;
+    height:190px;
+    width:190px;
+    background-color:rgb(255,230,0);
+  }
+  25%{
+    top:160px;
+    left:600px;
+    height:240px;
+    width:240px;
+    background-color:rgb(255,245,120);
+  }
+  50%{
+    top:180px;
+    left:620px;
+    height:200px;
+    width:200px;
+    background-color:rgb(255,255,0);
+  }
+  75%{
+    top:160px;
+    left:600px;
+    height:240px;
+    width:240px;
+    background-color:rgb(255,240,100);
+  }
+  100%{
+    top:200px;
+    left:650px;
+    height:190px;
+    width:190px;
+    background-color:rgb(255,230,0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<h1 style="text-align: center;color:#000000;">Sun Animation</h1>
+
+<div class="sun"></div>
+<div class="shadow"></div>
+
+<div class="bg">
+  <img src="https://static.vecteezy.com/system/resources/thumbnails/017/446/756/small/gold-color-background-with-blur-and-smooth-texture-for-festive-metallic-graphic-design-element-vector.jpg">
+</div>
+
+</body>
+</html>

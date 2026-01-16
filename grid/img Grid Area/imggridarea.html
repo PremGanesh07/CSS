@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Template Area Webpage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0px;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+
+        }
+        .top{
+
+            background-color: rgb(21, 87, 117);
+            color: #f0f0f0;
+            border-radius: 10px ;
+            padding: 10px;
+            margin: 10px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-auto-rows: 128px ;
+            gap: 10px;
+            grid-template-areas: 
+                "img1  img1  img2  img3  img4  img5"
+                "img6  img7  img7  img8  img8  img10"
+                "img11 img11 img11 img12 img13 img14"
+                "img15 img15 img16 img17 img17 img18";
+        }
+
+        .img1  { grid-area: img1; }
+        .img2  { grid-area: img2; } 
+        .img3  { grid-area: img3; } 
+        .img4  { grid-area: img4; }
+        .img5  { grid-area: img5; } 
+        
+        .img6  { grid-area: img6; } 
+        .img7  { grid-area: img7; } 
+        .img8  { grid-area: img8; } 
+        
+        .img11 { grid-area: img11; } 
+        .img12 { grid-area: img12; } 
+        .img13 { grid-area: img13; }
+        .img14 { grid-area: img14; } 
+        
+        .img15 { grid-area: img15; }
+        .img16 { grid-area: img16; } 
+        .img17 { grid-area: img17; } 
+        .img18 { grid-area: img18; } 
+
+   
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.02);
+            z-index: 2;
+        }
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+                grid-template-areas: none; 
+                grid-auto-rows: auto;
+            }
+            .gallery img {
+                grid-area: auto !important; 
+                height: 250px;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <center><div class="top">
+        Grid Webpage by using Grid Template Area </div></center>
+
+    <div class="gallery">
+        <img src="./img/image28.jfif" class="img1" alt="Leaf with droplets">
+        <img src="./img/image03.jpeg" class="img2" alt="Boats">
+        <img src="./img/image04.jpg" class="img3" alt="Pencils">
+        <img src="./img/image06.jpg" class="img4" alt="Fruit">
+        <img src="./img/image05.webp" class="img5" alt="Trees">
+
+        <img src="./img/image25.webp" class="img6" alt="Autumn Forest">
+        <img src="./img/image09.webp" class="img7" alt="Silhouettes">
+        <img src="./img/image10.webp" class="img8" alt="Concrete Wall">
+        <img src="./img/image01.jpg" class="img10" alt="Big Ben">
+
+        <img src="./img/image11.webp" class="img11" alt="Red Doors">
+        <img src="./img/image12.webp" class="img12" alt="Rafters">
+        <img src="./img/image14.jpeg" class="img13" alt="Purple Flower">
+        <img src="./img/image15.webp" class="img14" alt="Barn">
+
+        <img src="./img/image19.jpg" class="img15" alt="Pink Flower">
+        <img src="./img/image16.jpeg" class="img16" alt="Yellow Flower">
+        <img src="./img/image20.jpg" class="img17" alt="Sunset">
+        <img src="./img/image22.jpg" class="img18" alt="Graffiti">
+    </div>
+
+</body>
+</html>

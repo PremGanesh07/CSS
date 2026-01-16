@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Grid Layout</title>
+    <style>
+        /* Reset margins and ensure full height */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f4f4f4; /* Light grey page background */
+            height: 100vh;
+            width: 100vw;
+            padding: 15px; /* Outer spacing */
+            font-family: sans-serif;
+        }
+
+        /* --- MAIN LAYOUT --- */
+        .main-grid {
+            display: grid;
+            height: 100%;
+            width: 100%;
+            /* Two equal columns */
+            grid-template-columns: 1fr 1fr;
+            /* Top row is short (15%), Bottom row takes the rest (85%) */
+            grid-template-rows: 15% 1fr;
+            gap: 15px; 
+        }
+
+        /* --- COLORS --- */
+        .orange { background-color: #ffab73; }
+        .red { background-color: #ff6b6b; }
+        .green-light { background-color: #55d6c2; }
+        .green-medium { background-color: #1abc9c; }
+        .green-container { background-color: #0e917d; } /* Dark teal background for the nested area */
+
+        /* --- MAIN BLOCKS --- */
+        
+        /* Left Column */
+        .box-1 {
+            /* Top Left Orange */
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+        .box-2 {
+            /* Bottom Left Red */
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+
+        /* Right Column */
+        .box-3 {
+            /* Top Right Green */
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+        /* --- THE NESTED GRID (Bottom Right) --- */
+        /* This box acts as a container for the inner blocks */
+        .nested-grid-container {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            
+            /* Make this box a grid itself */
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1.5fr 1fr; 
+            
+            padding: 15px; 
+            gap: 15px;
+        }
+
+        /* Inner Blocks */
+        .inner-top {
+            /* Light Green: Spans full width of the container */
+            grid-column: 1 / 3;
+            grid-row: 1 / 2;
+        }
+        .inner-bottom-left {
+            /* Medium Green: Bottom Left */
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+        .inner-bottom-right {
+            /* Orange: Bottom Right */
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="main-grid">
+        <div class="box-1 orange"></div>
+        <div class="box-2 red"></div>
+
+        <div class="box-3 green-light"></div>
+
+        <div class="nested-grid-container green-container">
+            <div class="inner-top green-light"></div>
+            <div class="inner-bottom-left green-medium"></div>
+            <div class="inner-bottom-right orange"></div>
+        </div>
+    </div>
+
+</body>
+</html>

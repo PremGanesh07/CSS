@@ -1,0 +1,133 @@
+    body{margin:0;font-family:Arial;}
+
+    /* NAVBAR */
+    .nav{
+        width:100%;
+        padding:15px 20px;
+        box-sizing:border-box;
+        position: sticky ;
+        top: 0; z-index: 100;
+        background-color: rgb(255, 255, 255);
+
+
+    }
+    .nav div{
+        display:inline-block;
+        width:33%;
+        vertical-align:middle;
+    }
+    .nav-left{font-weight:bold; font-size:18px;color: rgb(0, 0, 0);}
+    .nav-right{text-align:right;}
+    .nav-right a{margin-left:20px; text-decoration:none; color:rgb(0, 0, 0);}
+
+    /* HERO */
+    .hero{
+        width:100%;
+        height:500px;
+        background:url('https://www.w3schools.com/w3images/architect.jpg');
+        background-size:cover;
+        background-position:center;
+        position:relative;
+    }
+    .hero-text{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        background:black;
+        color:white;
+        padding:10px 20px;
+        font-size:20px;
+        letter-spacing:2px;
+    }
+
+    /* SECTION TITLE */
+    h2{margin:40px 20px;}
+
+    /* PROJECT CARDS */
+    .projects{text-align:center;}
+    .project-card{
+        width:23%;
+        display:inline-block;
+        margin:10px 5px;
+        vertical-align:top;
+    }
+    .project-card img{
+        width:100%;
+        height:180px;
+        object-fit:cover;
+    }
+    .label{
+        position:relative;
+        top: 30px;
+        left:-90px;
+        background:black;
+        color:white;
+        display:inline-block;
+        padding:5px 10px;
+    }
+
+    /* ABOUT SECTION */
+    .about-text{
+        margin:20px;
+        line-height:1.6;
+    }
+
+    /* TEAM */
+    .team{text-align:center;}
+    .team-card{
+        width:22%;
+        display:inline-block;
+        vertical-align:top;
+        margin:10px;
+        border:1px solid #ddd;
+    }
+    .team-card img{
+        width:100%;
+        height:200px;
+        object-fit:cover;
+    }
+    .team-content{padding:10px;}
+    .team-card button{
+        width:100%;
+        padding:10px;
+        border:none;
+        background:#eee;
+        cursor:pointer;
+    }
+    .team-card button:hover{background:#ccc;}
+
+    /* CONTACT FORM */
+    .contact-form{
+        width:95%;
+        margin:auto;
+        padding:20px;
+    }
+    .contact-form input, .contact-form textarea{
+        width:100%;
+        padding:10px;
+        border:1px solid #ccc;
+        margin-bottom:10px;
+        box-sizing:border-box;
+    }
+    .contact-form button{
+        background:black;
+        color:white;
+        padding:10px 20px;
+        border:none;
+        cursor:pointer;
+    }
+
+    /* FOOTER IMAGE */
+    .map img{
+        width:100%;
+        margin-top:40px;
+    }
+
+    /* FOOTER */
+    footer{
+        text-align:center;
+        padding:20px;
+        background:#f1f1f1;
+        margin-top:20px;
+    }

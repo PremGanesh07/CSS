@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Box Model Demo</title>
+<style>
+    .box {
+        width: 250px;
+        padding: 20px;
+        margin: 30px;
+        border: 5px solid #0077b6;
+        background: #caf0f8;
+        box-sizing: border-box;
+    }
+
+    .outer {
+        padding: 30px;
+        border: 3px dashed #03045e;
+        margin: 20px;
+        background: #e0fbfc;
+    }
+</style>
+</head>
+<body>
+
+<h2>CSS Box Model Example</h2>
+
+<div class="outer">
+    <div class="box">
+        This is a box model example with padding, border, and margin.
+    </div>
+</div>
+<div class="outer">
+    <div class="box">
+        This is a box model example with padding, border, and margin.
+    </div>
+</div>
+
+</body>
+</html>

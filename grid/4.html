@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:sans-serif;
+}
+
+body{
+    background:#f0f2f5;
+    height:100vh;
+    width:100vw;
+    padding:15px;
+}
+
+/* Main container */
+.container{
+    display:grid;
+    grid-template-rows: 3fr 4fr 1.5fr;
+    gap:15px;
+    height:100%;
+}
+
+/* Rows */
+.row-top{
+    display:grid;
+    grid-template-columns: 38% 1fr;
+    gap:15px;
+}
+
+.row-middle{
+    display:grid;
+    grid-template-columns: 28% 1fr;
+    gap:15px;
+}
+
+.row-bottom{
+    display:grid;
+}
+
+/* Blocks */
+.block{
+    width:100%;
+    height:100%;
+}
+
+/* Colors */
+.orange{background:#ffab73;}
+.red{background:#ff6b6b;}
+.green-dark{background:#1abc9c;}
+.green-light{background:#55d6c2;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="row-top">
+        <div class="block orange"></div>
+        <div class="block red"></div>
+    </div>
+
+    <div class="row-middle">
+        <div class="block green-dark"></div>
+        <div class="block green-light"></div>
+    </div>
+
+    <div class="row-bottom">
+        <div class="block orange"></div>
+    </div>
+
+</div>
+
+</body>
+</html>

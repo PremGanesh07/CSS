@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Flexbox Container</title>
+
+<style>
+.container{
+    display: flex;                 /* Activates Flexbox */
+    flex-direction: row;           /* Items arranged in a row */
+    justify-content: space-evenly; /* Space items evenly on main axis */
+    align-items: center;           /* Align items vertically (cross axis) */
+    flex-wrap: wrap;               /* Items move to next line if needed */
+    gap: 15px;                     /* Space between flex items */
+    height: 250px;
+    border: 3px solid black;
+    background-color: #f1f5f9;
+    padding: 20px;
+}
+
+/* Flex Items */
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 22px;
+    display: flex;                 /* Center text inside box */
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Flex Container Properties </h2>
+
+<div class="container">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+</div>
+
+</body>
+</html>
